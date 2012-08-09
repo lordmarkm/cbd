@@ -36,8 +36,7 @@ public class UserDaoImpl implements UserDao {
 	public void delete(String userId) {
 		sessionFactory.getCurrentSession()
 		.createQuery("delete from UserAccountModel where userId = :userId")
-		.setString("userId", userId);
-		
+		.setString("userId", userId)
+		.executeUpdate();
 	}
-
 }
