@@ -26,7 +26,7 @@ public class RegistrationService {
 	public void save(UserAccountModel userAccount) {
 		dao.saveOrUpdate(userAccount);
 	}
-
+	
 	public void delete(String userId) {
 		dao.delete(userId);
 	}

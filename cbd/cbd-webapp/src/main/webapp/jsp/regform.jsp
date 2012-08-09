@@ -37,8 +37,7 @@
 		<input type="submit" />
 	</li>
 </ol>
-<form:hidden path="userAccount.userId" />
-<form:hidden path="userInfo.userId" />
+<form:hidden path="userId" />
 </form:form>
 
 <%@include file="links.jsp" %>

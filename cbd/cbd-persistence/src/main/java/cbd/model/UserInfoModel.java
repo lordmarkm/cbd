@@ -3,13 +3,14 @@ package cbd.model;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity @Table(name="USER_INFO")
 public class UserInfoModel {
-	@Id @Column(name="USER_ID") @GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Id 
+	@GeneratedValue
+	@Column(name="USER_INFO_ID")
 	private long userId;
 	
 	@Column
@@ -18,14 +19,10 @@ public class UserInfoModel {
 	@Column
 	private String lastName;
 
-	public long getUserId() {
-		return userId;
-	}
+	public UserInfoModel() {
 
-	public void setUserId(long userId) {
-		this.userId = userId;
 	}
-
+	
 	public String getFirstName() {
 		return firstName;
 	}
@@ -40,5 +37,13 @@ public class UserInfoModel {
 
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
+	}
+	
+	public long getUserId() {
+		return userId;
+	}
+	
+	public void setUserId(long userId) {
+		this.userId = userId;
 	}
 }

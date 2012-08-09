@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import cbd.model.UserAccountModel;
+import cbd.model.UserInfoModel;
 
 @Repository @Transactional
 public class UserDaoImpl implements UserDao {

@@ -26,7 +26,6 @@ public class RegistrationController {
 	
 	@RequestMapping(method = RequestMethod.GET)
 	public ModelAndView register() {
-		
 		return render("regform")
 				.addObject("regForm", new RegistrationForm(new UserAccountModel(new UserInfoModel())))
 				.addObject("memberTypes", MemberType.values())
@@ -42,12 +41,9 @@ public class RegistrationController {
 	}
 	
 	@RequestMapping("/save/")
-	public ModelAndView save(@ModelAttribute RegistrationForm regForm) {
+	public String save(@ModelAttribute RegistrationForm regForm) {
 		regService.save(regForm.getUserAccount());
-		
-		return render("userlist")
-				.addObject("users", regService.allUsers())
-				.mav();
+		return "redirect:/view/list/";
 	}
 	
 	@RequestMapping("/delete/{userId}")
